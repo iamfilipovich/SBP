@@ -1,0 +1,49 @@
+﻿@model Hotel.Models.reservations
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>reservations</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreatePost">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="GostId" class="control-label"></label>
+                <input asp-for="GostId" class="form-control" />
+                <span asp-validation-for="GostId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SobaId" class="control-label"></label>
+                <input asp-for="SobaId" class="form-control" />
+                <span asp-validation-for="SobaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DatumDolaska" class="control-label"></label>
+                <input asp-for="DatumDolaska" class="form-control" />
+                <span asp-validation-for="DatumDolaska" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DatumOdlaska" class="control-label"></label>
+                <input asp-for="DatumOdlaska" class="form-control" />
+                <span asp-validation-for="DatumOdlaska" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

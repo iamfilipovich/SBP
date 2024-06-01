@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Hotel.Models.hotels>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HotelID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImeHotela)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adresa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelID)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.ImeHotela)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adresa)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new { Name = item.ImeHotela }) |
+                    @Html.ActionLink("Delete", "Delete", new { Name = item.ImeHotela })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
